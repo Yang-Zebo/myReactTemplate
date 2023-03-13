@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 // npm install @types/node -D 安装这个获取 ts 对 node 模块的支持
-import { resolve } from 'path';
+import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [react()],
@@ -20,8 +20,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src"),
-      "/images": "src/assets/images/" //这里不能通过path模块解析路径的写法
+      '@': resolve(__dirname, 'src'),
+      '/images': 'src/assets/images/' //这里不能通过path模块解析路径的写法
     }
   },
   // 配置 css
