@@ -1,21 +1,22 @@
 import MyLayout from '@/views/MyLayout'
 import Home from '@/views/Home'
 import About from '@/views/About'
-import { useRoutes, RouteObject, Navigate } from 'react-router-dom'
+import { RouteObject, createBrowserRouter } from 'react-router-dom'
 
 export const routes: RouteObject[] = [
-  {
-    path: '/',
-    element: <Navigate to="/home"/>
-  },
+
   {
     path: '/',
     element: <MyLayout/>,
     children: [
       {
-        path: 'home',
-        element: <Home/>
-      }, {
+        element: <Home/>,
+        index: true
+      },
+      { path: 'home',
+        element: <Home/>,
+      },
+      {
         path: 'about',
         element: <About/>
       }
@@ -23,6 +24,6 @@ export const routes: RouteObject[] = [
   }]
 
 const GetRoutes = () => {
-  return useRoutes(routes)
+  return createBrowserRouter(routes)
 }
 export default GetRoutes

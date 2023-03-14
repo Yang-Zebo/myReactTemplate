@@ -1,13 +1,10 @@
-import { BrowserRouter } from 'react-router-dom'
 import GetRoutes from '@/router'
-import './index.less'
+import { RouterProvider } from 'react-router-dom'
+import './index.module.less'
 
 function Index() {
   return (
-    <BrowserRouter>
-      <GetRoutes/>
-    </BrowserRouter>
-
+    <RouterProvider router={GetRoutes()} />
   )
 }
 
