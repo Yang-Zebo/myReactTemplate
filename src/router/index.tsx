@@ -1,29 +1,11 @@
-import MyLayout from '@/views/MyLayout'
-import Home from '@/views/Home'
-import About from '@/views/About'
 import { RouteObject, createBrowserRouter } from 'react-router-dom'
+import { getReactRouter, getRoutesTree } from '@/utils/routerUtils'
+import baseRouter from './baseRouter'
+import rootRouter from './rootRouter'
 
-export const routes: RouteObject[] = [
-
-  {
-    path: '/',
-    element: <MyLayout/>,
-    children: [
-      {
-        element: <Home/>,
-        index: true
-      },
-      { path: 'home',
-        element: <Home/>,
-      },
-      {
-        path: 'about',
-        element: <About/>
-      }
-    ]
-  }]
-
+const routesTree: RouteObject[] = getRoutesTree(getReactRouter(baseRouter), getReactRouter(rootRouter))
+console.log('routesTree', routesTree)
 const GetRoutes = () => {
-  return createBrowserRouter(routes)
+  return createBrowserRouter(routesTree)
 }
 export default GetRoutes
