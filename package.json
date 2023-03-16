@@ -4,11 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "serve": "vite",
     "dev": "vite --mode dev",
-    "build": "vite build --mode prd",
-    "test": "vite build --mode test",
-    "preview": "vite preview"
+    "test": "vite --mode test",
+    "prd": "vite --mode prd",
+    "build:dev": "vite build --mode dev",
+    "build:test": "vite build --mode test",
+    "build:prd": "vite build --mode prd"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",

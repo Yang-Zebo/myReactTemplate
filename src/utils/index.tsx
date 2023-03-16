@@ -1,1 +1,2 @@
-export const getNavItems = () => {}
+export const getNavItems = () => {
+}
