@@ -2,12 +2,17 @@ import React from 'react'
 import styles from './index.module.less'
 import { Form, Input, Checkbox, Button } from 'antd'
 import { LockOutlined, UserOutlined } from '@ant-design/icons'
+import { useNavigate } from 'react-router-dom'
 
 const Index = () => {
+  const goToHomePage = () => {
+    const navigate = useNavigate()
+    navigate('/home')
+  }
   const onFinish = (values: any) => {
     console.log('Success:', values)
+    goToHomePage()
   }
-
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo)
   }
@@ -18,7 +23,6 @@ const Index = () => {
         <Form
           name="basic"
           size="large"
-          initialValues={ { remember: true } }
           onFinish={ onFinish }
           onFinishFailed={ onFinishFailed }
           labelCol={ { span: 6 } }
@@ -40,7 +44,7 @@ const Index = () => {
             <Input.Password prefix={ <LockOutlined/> }/>
           </Form.Item>
 
-          <Form.Item wrapperCol={ { offset: 6 } } name="remember">
+          <Form.Item wrapperCol={ { offset: 6 } } name="remember" valuePropName="checked">
             <Checkbox>记住账号</Checkbox>
           </Form.Item>
 

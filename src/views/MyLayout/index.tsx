@@ -1,7 +1,8 @@
 import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { Layout } from 'antd'
 import Menus from './components/Menus'
+
 const { Header, Sider, Content } = Layout
 const headerStyle: React.CSSProperties = {
   textAlign: 'center',

@@ -29,7 +29,7 @@ export const getReactRouter: (ourRouter: object[]) => RouteObject[] = (ourRouter
   })
   return reactRoute
 }
-export const getRoutesTree: (baseRouter: RouteObject[], rootRouter: RouteObject[]) => RouteObject[] = (baseRouter, rootRouter) => {
+export const getRouterTree: (baseRouter: RouteObject[], rootRouter: RouteObject[]) => RouteObject[] = (baseRouter, rootRouter) => {
   if(isLogin() || true) {
     return [...baseRouter, ...rootRouter]
   } else {
