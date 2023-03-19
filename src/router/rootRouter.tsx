@@ -1,4 +1,4 @@
-import MyLayout from '@/views/MyLayout'
+import MyLayout from '@/components/MyLayout'
 import Home from '@/views/Home'
 import About from '@/views/About'
 // children 与 index 不能在同一级
