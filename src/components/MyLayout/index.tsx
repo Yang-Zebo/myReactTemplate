@@ -8,9 +8,9 @@ import {
   UserOutlined
 } from '@ant-design/icons'
 import type { MenuProps } from 'antd'
-import { Breadcrumb, Button, Layout, Menu, theme } from 'antd'
+import { Breadcrumb, Layout, Menu } from 'antd'
 import styles from './index.module.less'
-const { Header, Content, Footer, Sider } = Layout
+const { Header, Content, Sider } = Layout
 
 type MenuItem = Required<MenuProps>['items'][number]
 
@@ -42,10 +42,6 @@ const items: MenuItem[] = [
 
 const Index: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false)
-  // 获取主题色
-  const {
-    token: { colorBgContainer }
-  } = theme.useToken()
 
   return (
     <Layout className={styles.layout}>
