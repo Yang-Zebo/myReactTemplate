@@ -2,12 +2,12 @@ import Login from '@/views/Login'
 import Error404 from '@/views/ErrorPage/Error404'
 const baseRouter: Object[] = [
   {
-    name: 'login',
+    label: 'login',
     path: '/login',
     element: <Login/>
   },
   {
-    name: 'Page404',
+    label: 'Page404',
     path: '/Page404',
     element: <Error404/>
   }

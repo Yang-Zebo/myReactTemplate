@@ -1,9 +1,8 @@
-import { RouteObject, createBrowserRouter } from 'react-router-dom'
-import { getReactRouter, getRouterTree } from '@/utils/routerUtils'
-import baseRouter from './baseRouter'
-import rootRouter from './rootRouter'
+import { createBrowserRouter } from 'react-router-dom'
+import { getRouterTree, getReactRouter } from '@/utils/routerUtils'
+import rootRouter from '@/router/rootRouter'
+import baseRouter from '@/router/baseRouter'
 
-const routerTree: RouteObject[] = getRouterTree(getReactRouter(baseRouter), getReactRouter(rootRouter))
-console.log('routerTree', routerTree)
-const finalRouter = createBrowserRouter(routerTree)
-export default finalRouter
+const finalRouter = getRouterTree(rootRouter, baseRouter)
+const reactRouter = createBrowserRouter(getReactRouter(finalRouter))
+export default reactRouter

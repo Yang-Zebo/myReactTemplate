@@ -1,10 +1,10 @@
-import finalRouter from '@/router'
+import reactRouter from '@/router'
 import { RouterProvider } from 'react-router-dom'
 
 
 function Index() {
   return (
-    <RouterProvider router={finalRouter} />
+    <RouterProvider router={reactRouter} />
   )
 }
 
